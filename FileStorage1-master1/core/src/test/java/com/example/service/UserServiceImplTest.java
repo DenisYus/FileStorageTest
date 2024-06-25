@@ -1,19 +1,19 @@
 package com.example.service;
 
 import com.example.BaseIntegrationTest;
-import com.example.Main;
+import com.example.MockKafkaBeans;
+import com.example.dao.UserRepository;
 import com.example.model.UserEntity;
 import com.example.model.UserStatus;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-//@SpringBootTest(classes = Main.class)
+@MockKafkaBeans
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UserServiceImplTest extends BaseIntegrationTest {
     @Autowired
@@ -51,7 +51,7 @@ class UserServiceImplTest extends BaseIntegrationTest {
         var user = UserEntity.builder().email("denis1@mail.ru").password("123").status(UserStatus.ACTIVE).build();
         userService.registerUser(user);
         //when
-        var getUser = userService.getUserById(3);
+        var getUser = userService.getUserById(5);
         //then
         var saved = userService.loadUserByUsername("denis1@mail.ru");
         assertEquals(saved.getId(), getUser.getId());

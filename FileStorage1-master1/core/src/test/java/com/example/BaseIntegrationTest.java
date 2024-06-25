@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class BaseIntegrationTest {
     @LocalServerPort
-    Integer port = 0;
+    protected Integer port = 0;
 
     @Autowired
     protected TestRestTemplate restTemplate;

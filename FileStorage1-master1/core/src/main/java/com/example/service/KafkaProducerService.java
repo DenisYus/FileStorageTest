@@ -1,5 +1,6 @@
 package com.example.service;
 
+
 import com.example.exception.ObjectMapperException;
 import com.example.model.MailMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;

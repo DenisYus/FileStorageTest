@@ -1,37 +1,52 @@
 package com.example.controller;
 
 import com.example.BaseIntegrationTest;
+import com.example.MockKafkaBeans;
+import com.example.dao.RoleRepository;
+import com.example.dao.UserRepository;
 import com.example.dto.AuthenticationRequest;
 import com.example.dto.AuthenticationResponse;
 import com.example.dto.FullUserDto;
+import com.example.dto.RoleDto;
+import com.example.mapers.RoleMapper;
+import com.example.service.RoleService;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.net.URI;
-import java.net.URISyntaxException;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 
+@MockKafkaBeans
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AuthControllerTest extends BaseIntegrationTest {
+    @Autowired
+    private RoleService roleService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    RoleRepository roleRepository;
+
 
     @Test
     public void Register() throws Exception {
         //given
-        FullUserDto userDto = new FullUserDto();
-        userDto.setEmail("test@example.com");
-        userDto.setPassword("password");
+        FullUserDto user = new FullUserDto();
+        user.setEmail("test@mail.ru");
+        user.setPassword("password");
+
+        Set<RoleDto> roleDtos = new HashSet<>();
+        roleDtos.add(RoleMapper.INSTANCE.toDto(roleService.getRoleById(1)));
+        user.setRoles(roleDtos);
         //when
         URI uri = serverUrl("/auth/register");
-        ResponseEntity<AuthenticationResponse> response = restTemplate.postForEntity(uri, userDto, AuthenticationResponse.class);
+        ResponseEntity<AuthenticationResponse> response = restTemplate.postForEntity(uri, user, AuthenticationResponse.class);
         //then
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isNotNull();
@@ -44,6 +59,9 @@ class AuthControllerTest extends BaseIntegrationTest {
         FullUserDto userDto = new FullUserDto();
         userDto.setEmail("existing@example.com");
         userDto.setPassword("password");
+        Set<RoleDto> roleDtos = new HashSet<>();
+        roleDtos.add(RoleMapper.INSTANCE.toDto(roleService.getRoleById(1)));
+        userDto.setRoles(roleDtos);
         URI uri = serverUrl("/auth/register");
         restTemplate.postForEntity(uri, userDto, AuthenticationResponse.class);
 
@@ -57,8 +75,11 @@ class AuthControllerTest extends BaseIntegrationTest {
     public void Authenticate() throws Exception {
         //given
         FullUserDto userDto = new FullUserDto();
-        userDto.setEmail("test@example.com");
+        userDto.setEmail("test1@example.com");
         userDto.setPassword("password");
+        Set<RoleDto> roleDtos = new HashSet<>();
+        roleDtos.add(RoleMapper.INSTANCE.toDto(roleService.getRoleById(1)));
+        userDto.setRoles(roleDtos);
         URI registerUri = serverUrl("/auth/register");
         restTemplate.postForEntity(registerUri, userDto, AuthenticationResponse.class);
         AuthenticationRequest request = new AuthenticationRequest();
@@ -79,6 +100,9 @@ class AuthControllerTest extends BaseIntegrationTest {
         FullUserDto userDto = new FullUserDto();
         userDto.setEmail("test@example.com");
         userDto.setPassword("password");
+        Set<RoleDto> roleDtos = new HashSet<>();
+        roleDtos.add(RoleMapper.INSTANCE.toDto(roleService.getRoleById(1)));
+        userDto.setRoles(roleDtos);
         URI registerUri = serverUrl("/auth/register");
         restTemplate.postForEntity(registerUri, userDto, AuthenticationResponse.class);
         AuthenticationRequest request = new AuthenticationRequest();
@@ -88,7 +112,7 @@ class AuthControllerTest extends BaseIntegrationTest {
         //when
         ResponseEntity<String> response = restTemplate.postForEntity(authUri, request, String.class);
         //then
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
     }
 
     @Test
@@ -101,7 +125,7 @@ class AuthControllerTest extends BaseIntegrationTest {
         //when
         ResponseEntity<String> response = restTemplate.postForEntity(authUri, request, String.class);
         //then
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
     }
 
 }

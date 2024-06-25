@@ -1,6 +1,7 @@
 package com.example.validator;
 
 import com.example.BaseIntegrationTest;
+import com.example.MockKafkaBeans;
 import com.example.exception.FileExtensionException;
 import com.example.exception.FileNameException;
 import com.example.exception.FileSizeException;
@@ -16,6 +17,7 @@ import org.springframework.test.context.TestPropertySource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@MockKafkaBeans
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {
         "file.allow.extensions=png,jpg",
@@ -29,9 +31,9 @@ public class FileUploadValidatorTest extends BaseIntegrationTest {
 
     @BeforeEach
     public void setUp() {
-        String allowedExtensions = environment.getProperty("file.allow.extensions" );
+        String allowedExtensions = environment.getProperty("file.allow.extensions");
         long maxFileSize = Long.parseLong(environment.getProperty("file.max.size"));
-        fileUploadValidator = new FileUploadValidator(allowedExtensions, maxFileSize );
+        fileUploadValidator = new FileUploadValidator(allowedExtensions, maxFileSize);
         fileUploadValidator.init();
     }
 

@@ -51,7 +51,7 @@ public class FileController {
 
     // FIXME: вообще лучше дробить файл на мелкие чанки, чтобы в будущем поддерживать загрузку больших файлов, но не успел
     @GetMapping("/download/{fileName}")
-    public  ResponseEntity<InputStreamResource> downloadFile(@PathVariable String fileName, @AuthenticationPrincipal UserEntity user) throws IOException {
+    public  ResponseEntity<InputStreamResource> downloadFile(@PathVariable String fileName, @AuthenticationPrincipal UserEntity user) {
 
         InputStreamResource resource = fileService.downloadFile(fileName, user);
         return  ResponseEntity.ok()

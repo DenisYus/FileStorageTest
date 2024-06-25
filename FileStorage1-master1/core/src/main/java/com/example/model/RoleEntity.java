@@ -18,6 +18,6 @@ public class RoleEntity {
     private Integer id;
     @Column(name = "role", unique = true)
     private String userRole;
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
     private Set<UserEntity> user;
 }

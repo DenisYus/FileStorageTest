@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.dao.UserRepository;
+import com.example.exception.UserAlreadyExistsException;
 import com.example.model.UserEntity;
 import com.example.model.UserStatus;
 import jakarta.transaction.Transactional;
@@ -24,6 +25,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void registerUser(UserEntity user) {
+        if (!(userRepository.findByEmail(user.getEmail()) == null)){
+            throw new UserAlreadyExistsException("User email"+ user.getEmail() +"already exist");
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setStatus(UserStatus.ACTIVE);
         userRepository.save(user);

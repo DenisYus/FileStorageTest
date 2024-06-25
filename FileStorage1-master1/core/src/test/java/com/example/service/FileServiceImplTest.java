@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.BaseIntegrationTest;
+import com.example.MockKafkaBeans;
 import com.example.dao.FileRepository;
 import com.example.dao.UserRepository;
 import com.example.dto.FileFilterDto;
@@ -29,6 +30,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@MockKafkaBeans
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class FileServiceImplTest extends BaseIntegrationTest {
     @Autowired

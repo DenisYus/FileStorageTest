@@ -45,14 +45,18 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public InputStreamResource downloadFile(String fileName, UserEntity user) throws IOException {
+    public InputStreamResource downloadFile(String fileName, UserEntity user) {
         String userDirectory = fileStorageLocation + File.separator + user.getId();
         Path filePath = Paths.get(userDirectory, fileName);
         if (!Files.exists(filePath)) {
             throw new FileNotFoundException("File not found");
         }
         kafkaProducerService.sendMailMessage(user.getEmail(), "Files downloaded", "You have downloaded"+fileName);
-        return new InputStreamResource(Files.newInputStream(filePath));
+        try {
+            return new InputStreamResource(Files.newInputStream(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

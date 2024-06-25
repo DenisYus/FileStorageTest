@@ -1,22 +1,7 @@
 version: '3.1'
 
 services:
-  core:
-    image: openjdk:21-jdk-slim-buster
-    container_name: core
-    command: java -jar /core.jar
-    volumes:
-      - "./core/target/core-0.0.1-SNAPSHOT.jar:/core.jar"
-    ports:
-      - "8080:8080"
-  mail:
-    image: openjdk:21-jdk-slim-buster
-    container_name: mail
-    command: java -jar /mail.jar
-    volumes:
-      - "./mail/target/core-0.0.1-SNAPSHOT.jar:/mail.jar"
-    ports:
-      - "8081:8081"
+
   postgres:
     image: postgres:latest
     container_name: postgres

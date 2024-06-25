@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface FileService {
 
-    InputStreamResource downloadFile(String fileName, UserEntity user) throws IOException;
+    InputStreamResource downloadFile(String fileName, UserEntity user) ;
     void uploadFiles(String email, List<MultipartFile> files);
     List<FileEntity> getUserFiles(UserEntity user);
     List<FileEntity> getAllFiles();

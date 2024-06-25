@@ -1,5 +1,6 @@
 package com.example.service;
 
+
 import com.example.dao.UserRepository;
 import com.example.exception.UserHasBeenBannedException;
 import com.example.model.RoleEntity;
@@ -13,19 +14,21 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
+
+
 public class AuthenticationUserServiceTest {
 
     @Mock
     private UserRepository userRepository;
+    @Mock
+    private KafkaProducerService kafkaProducerService;
 
     @InjectMocks
     private AuthenticationUserService authenticationUserService;
