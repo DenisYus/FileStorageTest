@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e19e1f0-2b04-4a91-87b9-c55ec75b4810" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/exception/ObjectMapperException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/exception/UserAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/init/DataInicializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/mapers/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/model/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/model/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/AuthenticationUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/AuthenticationUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/KafkaProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/java/com/example/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/BaseIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/BaseIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/controller/AuthControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/controller/AuthControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/controller/UsersControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/controller/UsersControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/AuthenticationUserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/AuthenticationUserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/FileServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/FileServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/service/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/util/FileSpecificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/util/FileSpecificationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/validator/FileUploadValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/core/src/test/java/com/example/validator/FileUploadValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileStorage1-master1/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/FileStorage1-master1/docker-compose.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2iNoeoW8xvoSdmVBQ8lva1Pnk2N" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/prog/FileStorage1-master1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.UsersControllerTest">
+    <configuration name="AuthenticationUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.service.AuthenticationUserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.service.FileServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.service.UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.controller.UsersControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersControllerTest.ChangeUserStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.controller.UsersControllerTest" />
+      <option name="METHOD_NAME" value="ChangeUserStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="core" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UsersControllerTest" />
+        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.FileServiceImplTest" />
+        <item itemvalue="JUnit.AuthenticationUserServiceTest" />
+        <item itemvalue="JUnit.UsersControllerTest.ChangeUserStatus" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e19e1f0-2b04-4a91-87b9-c55ec75b4810" name="Changes" comment="" />
+      <created>1719340493553</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719340493553</updated>
+      <workItem from="1719340494518" duration="310000" />
+      <workItem from="1719341001178" duration="3402000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
