@@ -27,21 +27,21 @@ public class DataInicializer {
     private void dataBase() {
         RoleEntity roleModerator = RoleEntity.builder().userRole("ROLE_MODERATOR").build();
         RoleEntity roleUser = RoleEntity.builder().userRole("ROLE_USER").build();
-        Set<RoleEntity> adminSet = new HashSet<>();
+        Set<RoleEntity> moderatorSet = new HashSet<>();
         Set<RoleEntity> userSet = new HashSet<>();
 
         roleService.addRole(roleModerator);
         roleService.addRole(roleUser);
-        adminSet.add(roleModerator);
+        moderatorSet.add(roleModerator);
         userSet.add(roleUser);
         UserEntity newUser = UserEntity.builder().email("user@mail.com")
                 .password("123").roles(userSet)
                 .build();
-        UserEntity admin = UserEntity.builder().email("moderator@mail.com")
-                .password("123").roles(adminSet)
+        UserEntity moderator = UserEntity.builder().email("moderator@mail.com")
+                .password("123").roles(moderatorSet)
                 .build();
         userService.registerUser(newUser);
-        userService.registerUser(admin);
+        userService.registerUser(moderator);
     }
 
 }
